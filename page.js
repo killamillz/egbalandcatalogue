@@ -35,7 +35,9 @@ function renderSlides() {
     const slide = document.createElement("div");
     slide.className = "mySlides fade";
     slide.innerHTML = `
-      <img src="${img.src}" class="w-full h-[400px] md:h-[950px] md:w-[900px] object-fill" alt="${img.caption}" />
+      <img src="${img.src}" class="${
+      index === 0 ? "w-[750px]" : "w-full"
+    } h-[400px] md:h-[720px] object-fill" alt="${img.caption}" />
     `;
     slideshow.appendChild(slide);
 
