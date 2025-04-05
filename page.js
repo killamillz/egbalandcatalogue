@@ -35,9 +35,7 @@ function renderSlides() {
     const slide = document.createElement("div");
     slide.className = "mySlides fade";
     slide.innerHTML = `
-      <div class="numbertext">${index + 1} / ${images.length}</div>
-      <img src="${img.src}" class="w-full object-fill" alt="${img.caption}" />
-      <div class="text">${img.caption}</div>
+      <img src="${img.src}" class="w-full h-[400px] md:h-[950px] md:w-[900px] object-fill" alt="${img.caption}" />
     `;
     slideshow.appendChild(slide);
 
@@ -62,12 +60,11 @@ function renderSlides() {
   next.onclick = () => plusSlides(1);
 
   // Insert into the outer nav container
-  const navContainer = document.getElementById("nav-arrows");
-  navContainer.appendChild(prev);
-  navContainer.appendChild(next);
+  const navContainerLeft = document.getElementById("nav-left");
+  const navContainerRight = document.getElementById("nav-left");
 
-  slideshow.appendChild(prev);
-  slideshow.appendChild(next);
+  navContainerLeft.appendChild(prev);
+  navContainerRight.appendChild(next);
 }
 
 renderSlides();
